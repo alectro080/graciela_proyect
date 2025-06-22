@@ -1,0 +1,294 @@
+ * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+
+
+
+
+    body {
+      font-family: 'Lora', serif;
+      background-color: #f4f4f4;
+    }
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+  width: 60px;
+  height: 60px;
+  background-color: #25D366;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+}
+
+.whatsapp-float img {
+  width: 30px;
+  height: 30px;
+}
+
+    header {
+      background-color: #B0E0E6;
+      color: white;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+    .logo img {
+    height: 60px; /* ajustá según tu diseño */
+    object-fit: contain;
+    }
+
+    .menu-toggle {
+      font-size: 1.5rem;
+      cursor: pointer;
+      display: none;
+    }
+
+    nav {
+      background-color: #444;
+    }
+
+    ul.menu {
+      list-style: none;
+      display: flex;
+      justify-content: space-evenly;
+    }
+
+    ul.menu li {
+      margin: 0;
+    }
+
+    ul.menu li a {
+      display: block;
+      padding: 1rem;
+      color: white;
+      text-decoration: none;
+    }
+
+    ul.menu li a:hover {
+      background-color: #555;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      ul.menu {
+        flex-direction: column;
+        display: none;
+      }
+
+      ul.menu.show {
+        display: flex;
+      }
+    }
+
+    .content {
+      padding: 2rem;
+    }
+.quien-soy {
+  display: flex;
+  min-height: 300px;
+  width: 100%;
+}
+
+
+.foto-lateral {
+  width: 30%;
+  background-color: #D3D3D3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 1rem;
+}
+
+
+
+.texto-lateral {
+  width: 70%;
+  padding: 2rem;
+  background-color: white;
+}
+
+.texto-lateral h1 {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 30px; /* ajustá el valor según el espacio que quieras */
+}
+
+.texto-lateral p {
+  margin-bottom: 40px;
+}
+
+
+@media (max-width: 768px) {
+  .quien-soy {
+    flex-direction: column;
+  }
+  .foto-lateral,
+  .texto-lateral {
+    width: 100%;
+  }
+  .foto-lateral {
+    padding: 1rem;
+  }
+}
+.foto-placeholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.foto-placeholder img {
+  max-width: 100%;
+  max-height: 90%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+/* opcional, para redondear las esquinas */
+
+.introduccion {
+  padding: 2rem;
+}
+
+.carrusel {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 2rem;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.slides {
+  display: flex;
+  width: 300%; /* 3 imágenes */
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  width: 100%; /* cada slide ocupa todo el carrusel */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide img {
+  width: 70%;
+  max-width: 400px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: auto;
+}
+
+
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: white;
+  background-color: rgba(0,0,0,0.4);
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.7);
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+
+.svg-top,
+.svg-bottom {
+  width: 100%;
+  line-height: 0;
+  overflow: hidden;
+}
+
+.svg-top svg,
+.svg-bottom svg {
+  display: block;
+  width: 100%;
+  height: 60px;
+}
+
+@keyframes onda {
+  0% {
+    d: path("M0,0 C480,100 960,0 1440,100 L1440,0 L0,0 Z");
+  }
+  50% {
+    d: path("M0,0 C480,80 960,120 1440,100 L1440,0 L0,0 Z");
+  }
+  100% {
+    d: path("M0,0 C480,100 960,0 1440,100 L1440,0 L0,0 Z");
+  }
+}
+
+.wave {
+  animation: onda 6s ease-in-out infinite;
+}
+
+.cursos-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem 1rem;
+}
+
+.curso-card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  width: 300px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  font-family: 'Lora', serif;
+}
+
+.curso-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+.curso-card h3 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.curso-card p {
+  font-size: 0.95rem;
+  color: #555;
+}
