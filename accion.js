@@ -78,10 +78,9 @@ function moverSlide(direccion) {
         case 'introduccion':
           html = `
                 <div class="carrusel">
-                  <div class="slides">
-                    <div class="slide"><img src="/imagen/descarga.jpg" alt="Imagen 1"></div>
-                    <div class="slide"><img src="/imagen/images.jpg" alt="Imagen 2"></div>
-                    <div class="slide"><img src="/imagen/quesperarenunasesinpsicolgicaenargentina-20231120224736.jpg" alt="Imagen 3"></div>
+                    <div class="slides"><img class="slide" src="imagen/img1.jpeg" alt="Imagen 1">
+                    <img class="slide" src="imagen/img2.jpeg" alt="Imagen 2">
+                    <img class="slide" src="imagen/img3.jpeg" alt="Imagen 3">
                   </div>
                   <button class="prev" onclick="moverSlide(-1)">❮</button>
                   <button class="next" onclick="moverSlide(1)">❯</button>
