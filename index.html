@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Medicina alternativa al mejor lugar</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <script src="/accion.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <script src="accion.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
@@ -19,7 +19,7 @@
     <header>
     <h1>Graciela Acosta</h1>
     <div class="logo">
-      <img src="/imagen/logo_sin_bordes-Photoroom.png" alt="Logo Graciela Acosta">
+      <img src="imagen/logo_sin_bordes-Photoroom.png">
     </div>
     <span class="menu-toggle" onclick="toggleMenu()">☰</span>
   </header>
@@ -38,13 +38,26 @@
       <path class="wave" d="M0,0 C480,100 960,0 1440,100 L1440,0 L0,0 Z" fill="#696969"></path>
     </svg>
   </div>
+  <a href="https://www.instagram.com/graciela_acostta/" target="_blank" class="instagram-button">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" class="instagram-icon">
+  Seguir en Instagram
+  </a>
+
+
+
 
 
 
   <div class="content" id="content">
-    <h2>Bienvenido</h2>
-    <p>Selecciona una opción del menú para comenzar.</p>
+  <!-- La sección se cargará desde JS -->
   </div>
+
+  <script>
+    window.onload = () => {
+      showContent('introduccion');
+    };
+  </script>
+
 
   <footer>
   <div class="svg-bottom">
