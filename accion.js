@@ -36,7 +36,7 @@ function initCarrusel() {
         <section class="quien-soy">
             <div class="foto-lateral">
             <div class="foto-placeholder">
-                <img src="imagen/WhatsApp Image 2025-06-21 at 12.09.54 PM.jpeg" alt="">
+                <img src="imagen/whatsapp1.jpeg" alt="Imagen de WhatsApp">
             </div>
             </div>
             <div class="texto-lateral">
