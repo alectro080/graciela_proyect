@@ -5,22 +5,30 @@
 
 
 
-let currentSlide = 0;
+let carruselIndex = 0;
 
-function moverSlide(direccion) {
-  const slides = document.querySelector('.slides');
-  if (!slides) return;
+function initCarrusel() {
+  const track = document.querySelector('.slide-track');
+  const slides = document.querySelectorAll('.slide');
 
-  const totalSlides = slides.children.length;
-  currentSlide = (currentSlide + direccion + totalSlides) % totalSlides;
-  slides.style.transform = `translateX(-${currentSlide * 34}%)`;
+  if (!track || slides.length === 0) return;
+
+  const total = slides.length;
+
+  window.moverSlide = function (direccion) {
+    carruselIndex = (carruselIndex + direccion + total) % total;
+    track.style.transform = `translateX(-${carruselIndex * 100}%)`;
+  };
 }
+
+
+
 
 
     function showContent(section) {
       const content = document.getElementById("content");
       let html = "";
-
+      
       switch (section) {
         case 'quienSoy':
           html = 
@@ -75,28 +83,38 @@ function moverSlide(direccion) {
           `;
           break;
 
-        case 'introduccion':
-          html = `
-                <div class="carrusel">
-                    <div class="slides"><img class="slide" src="imagen/img1.jpeg" alt="Imagen 1">
-                    <img class="slide" src="imagen/img2.jpeg" alt="Imagen 2">
-                    <img class="slide" src="imagen/img3.jpeg" alt="Imagen 3">
+          case 'introduccion':
+              html = `
+                <section class="introduccion">
+                  <div class="carrusel">
+                    <div class="slide-track">
+                      <img class="slide" src="imagen/img1.jpeg" alt="Imagen 1">
+                      <img class="slide" src="imagen/img2.jpeg" alt="Imagen 2">
+                      <img class="slide" src="imagen/img3.jpeg" alt="Imagen 3">
+                    </div>
+                    <button class="prev" onclick="moverSlide(-1)">❮</button>
+                    <button class="next" onclick="moverSlide(1)">❯</button>
                   </div>
-                  <button class="prev" onclick="moverSlide(-1)">❮</button>
-                  <button class="next" onclick="moverSlide(1)">❯</button>
-                </div>
-              <div class="intro-text">
-                <h1>Introducción</h1>
-                <p>Bienvenida a mi espacio, soy Graciela Acostta.
-Acompaño procesos de transformación desde una mirada integradora, amorosa y consciente.
-Creo en la sanación como un camino hacia el equilibrio del alma, el cuerpo y la mente.
-Aquí vas a encontrar terapias que despiertan, alivian y ordenan, y también formaciones para quienes sienten el llamado a expandirse y acompañar a otros.</p>
-              </div>
-            </section>
-          `;
-          break;
+                  <div class="intro-text">
+                    <h1>Introducción</h1>
+                    <p>Bienvenida a mi espacio, soy Graciela Acostta.
+          Acompaño procesos de transformación desde una mirada integradora, amorosa y consciente.
+          Creo en la sanación como un camino hacia el equilibrio del alma, el cuerpo y la mente.
+          Aquí vas a encontrar terapias que despiertan, alivian y ordenan, y también formaciones para quienes sienten el llamado a expandirse y acompañar a otros.</p>   
+                  </div>
+                </section>
+              `;
+              setTimeout(initCarrusel, 50); // ejecuta JS después de insertar HTML dinámico
+              break;
+
+        
+        
 
 
+
+
+
+              
         case "turnos":
           html = `
             <h2>Reservar Turno</h2>
@@ -132,4 +150,6 @@ Aquí vas a encontrar terapias que despiertan, alivian y ordenan, y también for
       }
 
       content.innerHTML = html;
+
     }
+
