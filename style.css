@@ -200,11 +200,24 @@
   transition: transform 0.6s ease-in-out;
 }
 
+@media (max-width: 768px) {
+  .carrusel {
+    max-width: 100%;
+  }
+
+  .slide {
+    max-height: 250px;
+  }
+}
+
 .slide {
   flex: 0 0 100%;
-  max-height: 350px;
+  width: 100%;
+  height: auto;
+  max-height: 400px; /* opcional, según tu diseño */
   object-fit: cover;
   border-radius: 10px;
+  display: block;
 }
 
 /* Flechas */
