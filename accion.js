@@ -127,7 +127,29 @@ function initCarrusel() {
             </div>
           `;
           break;
+        case "turnos":
+          html = `
+            <h2>Reservar Turno</h2>
+            <div class="cursos-container">
+              <div class="curso-card">
+                <h3>¿Cómo sacar un turno?</h3>
+                <p>Para reservar un turno, por favor comunicate por alguno de estos medios:</p>
+                <a class="general-button" href="https://wa.me/5491132557898" target="_blank">
+                  <img class="instagram-icon" src="imagen/whatsapp.png" alt="WhatsApp"> WhatsApp
+               <!-- Link directo a Gmail (abre en el navegador) -->
+                <a class="general-button" href="https://mail.google.com/mail/?view=cm&to=medicinaintegralgraciela@gmail.com" target="_blank">
+                  <img class="instagram-icon" src="imagen/gmail.png" alt="Gmail"> Gmail Web
+                </a>
 
+                <!-- Link tradicional mailto (abre app de correo si está configurada) -->
+                <a class="general-button" href="mailto:medicinaintegralgraciela@gmail.com">
+                 <img class="instagram-icon" src="imagen/gmail.png" alt="Gmail"> Gmail App
+                </a>
+                <p>Vas a poder coordinar tu sesión directamente por mensaje.</p>
+              </div>
+            </div>
+          `;
+          break;
             
 
 
