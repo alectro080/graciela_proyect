@@ -107,22 +107,6 @@ function initCarrusel() {
               setTimeout(initCarrusel, 50); // ejecuta JS después de insertar HTML dinámico
               break;
 
-        
-        
-
-
-
-
-
-              
-        case "turnos":
-          html = `
-            <h2>Reservar Turno</h2>
-            <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0HAWl29zdTZYLvSAYLEogdV354Pj54VACvbC9YpwsPidtxbYZ_hQg10OPtQDLaoizvEu_UzfkV?gv=true"
-            style="border: 0" width="100%" height="600" frameborder="0">
-            </iframe>
-        `;
-          break;
 
         case 'terapias':
           html = `
